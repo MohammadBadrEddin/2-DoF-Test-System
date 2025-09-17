@@ -16,9 +16,10 @@ Currently, the code runs with **one AS5600 sensor + one digital Hall sensor**.
 ## Features
 - Object-oriented motor control (`PitchMotor`, `YawMotor`)
 - Position feedback via magnetic angle sensing (AS5600)
-- Homing routines for both axes
+- Homing routines for both axes (recommended on first startup to ensure reference positions)
 - Angle-to-step and step-to-angle conversion
 - Ready for integration with multiple sensors and drivers
+- Current motion range is limited for both axes to prevent hardware damage during testing
 
 ## Build & Upload
 This project uses **PlatformIO** in VS Code
