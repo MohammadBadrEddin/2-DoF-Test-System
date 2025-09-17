@@ -7,7 +7,8 @@ This project provides the software for controlling a **2-DoF robotic arm** drive
 The setup includes:
 - **2 × Stepper motors** (controlled via A4988 drivers)
 - **1 × AS5600 magnetic rotary sensor** (I²C)
-- **1 × Digital Hall sensor** (used temporarily for yaw axis feedback)
+- **1 × A3144 Digital Hall sensor** (used temporarily for yaw axis feedback)
+- **1 x Arduino Nano Atmega328**
 - Modular C++ codebase for easy extension
 
 > **I²C multiplexer (Goal):** A TCA9548A will be required when using two AS5600 sensors on the same I²C bus.
