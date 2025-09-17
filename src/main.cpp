@@ -8,7 +8,7 @@ YawMotor yaw(8, 9, 2, 12.0);   // stepPin, dirPin, hallSensorPin, maxSpeed
 PitchMotor pitch(10, 11, 10.0); // stepPin, dirPin, maxSpeed
 
 void setup() {
-    Serial.begin(BAUD_RATE);
+    Serial.begin(BAUD_RATE); // begin the serial communication
     Serial.println("System initialized! Type 'h' to home both axes or input angles 'yaw,pitch'.");
 }
 
@@ -23,8 +23,8 @@ void loop() {
             int commaIndex = input.indexOf(',');
             if (commaIndex > 0) {
                 int yawAngle = input.substring(0, commaIndex).toInt();
-                int pitchAngle = input.substring(commaIndex + 1).toInt();
-                if (yawAngle >= -100 && yawAngle <= 100 && pitchAngle >= -30 && pitchAngle <= 30) {
+                int pitchAngle = input.substring(commaIndex + 1).toInt(); // put a "," between two angles --> example: 90,-10
+                if (yawAngle >= -100 && yawAngle <= 100 && pitchAngle >= -30 && pitchAngle <= 30) { // limit the both angles
                     Serial.print("Moving Yaw: "); Serial.print(yawAngle);
                     Serial.print(" Pitch: "); Serial.println(pitchAngle);
                     yaw.moveToAngle(yawAngle);
